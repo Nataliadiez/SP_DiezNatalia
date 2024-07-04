@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "SP_DiezNatalia\Entidades.csproj", "{37830539-BF9F-4AB7-BCED-5A20A13B4440}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba", "Prueba\Prueba.csproj", "{146DD727-604C-43F3-96FA-1BD48CCF7CA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formularios", "CRUD2\Formularios.csproj", "{EC8ABF4D-AE53-4388-A91A-A31F55ADF2CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37830539-BF9F-4AB7-BCED-5A20A13B4440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37830539-BF9F-4AB7-BCED-5A20A13B4440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37830539-BF9F-4AB7-BCED-5A20A13B4440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37830539-BF9F-4AB7-BCED-5A20A13B4440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{146DD727-604C-43F3-96FA-1BD48CCF7CA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{146DD727-604C-43F3-96FA-1BD48CCF7CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{146DD727-604C-43F3-96FA-1BD48CCF7CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{146DD727-604C-43F3-96FA-1BD48CCF7CA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC8ABF4D-AE53-4388-A91A-A31F55ADF2CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC8ABF4D-AE53-4388-A91A-A31F55ADF2CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC8ABF4D-AE53-4388-A91A-A31F55ADF2CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC8ABF4D-AE53-4388-A91A-A31F55ADF2CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9308218A-C385-42BD-B1A8-143ED4FFF541}
+	EndGlobalSection
+EndGlobal
