@@ -1,9 +1,12 @@
 ﻿
 
 
+using System.Text;
+
 namespace SP_DiezNatalia
 {
     public class Empleado
+
     {
         int id;
         string nombre;
@@ -52,6 +55,13 @@ namespace SP_DiezNatalia
         public static bool operator !=(Empleado emp1, Empleado emp2)
         {
             return !(emp1 == emp2);
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("datos");
+            return sb.ToString();
         }
     }
 }

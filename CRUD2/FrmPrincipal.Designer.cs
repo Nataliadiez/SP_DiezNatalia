@@ -32,39 +32,49 @@
             btn_MenuCrear = new Button();
             label2 = new Label();
             dg_MostrarTodos = new DataGridView();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dg_MostrarTodos).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btn_MenuMostrar
             // 
+            btn_MenuMostrar.BackColor = Color.PaleVioletRed;
+            btn_MenuMostrar.FlatAppearance.BorderColor = Color.LightPink;
+            btn_MenuMostrar.FlatAppearance.BorderSize = 3;
+            btn_MenuMostrar.FlatStyle = FlatStyle.Flat;
             btn_MenuMostrar.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_MenuMostrar.ForeColor = Color.Black;
-            btn_MenuMostrar.Location = new Point(248, 12);
+            btn_MenuMostrar.ForeColor = Color.WhiteSmoke;
+            btn_MenuMostrar.Location = new Point(254, 21);
             btn_MenuMostrar.Name = "btn_MenuMostrar";
             btn_MenuMostrar.Size = new Size(102, 39);
             btn_MenuMostrar.TabIndex = 2;
             btn_MenuMostrar.Text = "Mostrar";
-            btn_MenuMostrar.UseVisualStyleBackColor = true;
+            btn_MenuMostrar.UseVisualStyleBackColor = false;
             btn_MenuMostrar.Click += btn_MenuMostrar_Click;
             // 
             // btn_MenuCrear
             // 
+            btn_MenuCrear.BackColor = Color.PaleVioletRed;
+            btn_MenuCrear.FlatAppearance.BorderColor = Color.LightPink;
+            btn_MenuCrear.FlatAppearance.BorderSize = 3;
+            btn_MenuCrear.FlatStyle = FlatStyle.Flat;
             btn_MenuCrear.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_MenuCrear.ForeColor = Color.Black;
-            btn_MenuCrear.Location = new Point(404, 12);
+            btn_MenuCrear.ForeColor = Color.WhiteSmoke;
+            btn_MenuCrear.Location = new Point(431, 21);
             btn_MenuCrear.Name = "btn_MenuCrear";
-            btn_MenuCrear.Size = new Size(102, 39);
+            btn_MenuCrear.Size = new Size(112, 39);
             btn_MenuCrear.TabIndex = 3;
             btn_MenuCrear.Text = "Crear";
-            btn_MenuCrear.UseVisualStyleBackColor = true;
+            btn_MenuCrear.UseVisualStyleBackColor = false;
             btn_MenuCrear.Click += btn_MenuCrear_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(28, 20);
+            label2.ForeColor = Color.WhiteSmoke;
+            label2.Location = new Point(22, 21);
             label2.Name = "label2";
             label2.Size = new Size(151, 23);
             label2.TabIndex = 5;
@@ -74,27 +84,38 @@
             // 
             dg_MostrarTodos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dg_MostrarTodos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dg_MostrarTodos.Location = new Point(20, 103);
+            dg_MostrarTodos.Location = new Point(22, 113);
             dg_MostrarTodos.Name = "dg_MostrarTodos";
             dg_MostrarTodos.RowTemplate.Height = 25;
             dg_MostrarTodos.Size = new Size(749, 307);
             dg_MostrarTodos.TabIndex = 6;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.PaleVioletRed;
+            panel1.Controls.Add(btn_MenuCrear);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(btn_MenuMostrar);
+            panel1.Location = new Point(0, 1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(800, 78);
+            panel1.TabIndex = 7;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightPink;
             ClientSize = new Size(800, 450);
+            Controls.Add(panel1);
             Controls.Add(dg_MostrarTodos);
-            Controls.Add(label2);
-            Controls.Add(btn_MenuCrear);
-            Controls.Add(btn_MenuMostrar);
             ForeColor = Color.Black;
             Name = "FrmPrincipal";
             Text = "Menú inicio";
             ((System.ComponentModel.ISupportInitialize)dg_MostrarTodos).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -102,5 +123,6 @@
         private Button btn_MenuCrear;
         private Label label2;
         private DataGridView dg_MostrarTodos;
+        private Panel panel1;
     }
 }

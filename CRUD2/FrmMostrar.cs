@@ -14,43 +14,50 @@ namespace CRUD2
 {
     public partial class FrmMostrar : Form
     {
-        DataEmpleado data;
+        Data data;
         List<Empleado> listaEmpleados;
-        Empleado empAModificar;
+        int indiceRegistro;
         public FrmMostrar()
         {
             InitializeComponent();
-            data = new DataEmpleado("localhost", "empresa");
+            data = new Data("localhost", "empresa");
             listaEmpleados = data.SeleccionarEmpleados();
             dg_MostrarElementos.DataSource = listaEmpleados;
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            FrmCrear crearEmp = new FrmCrear(this.empAModificar);
+            FrmCrear crearEmp = new FrmCrear(this.indiceRegistro);
             crearEmp.ShowDialog();
+            listaEmpleados = data.SeleccionarEmpleados();
+            dg_MostrarElementos.DataSource = listaEmpleados;
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            DialogResult eliminar = MessageBox.Show("¿Está seguro de que desea eliminar el usuario?", "Eliminar usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            int idAEliminar = listaEmpleados[this.indiceRegistro].Id;
+            DialogResult eliminar = MessageBox.Show($"¿Está seguro de que desea eliminar el usuario?\n{idAEliminar}", "Eliminar usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (eliminar == DialogResult.Yes)
             {
-                MessageBox.Show("Usuario eliminado");
+                try
+                {
+                    data.EliminarEmpleado(idAEliminar);
+                    MessageBox.Show("Usuario eliminado");
+                    listaEmpleados = data.SeleccionarEmpleados();
+                    dg_MostrarElementos.DataSource = listaEmpleados;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dg_MostrarElementos_SelectionChanged(object sender, EventArgs e)
         {
-            int index = dg_MostrarElementos.CurrentRow.Index;
-            this.empAModificar = listaEmpleados[index];
+            this.indiceRegistro = dg_MostrarElementos.CurrentRow.Index;
         }
+
     }
 }

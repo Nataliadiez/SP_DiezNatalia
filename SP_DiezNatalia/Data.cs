@@ -8,11 +8,11 @@ using SP_DiezNatalia;
 
 namespace Entidades
 {
-    public class DataEmpleado
+    public class Data
     {
         string connectionString;
 
-        public DataEmpleado(string server, string db) 
+        public Data(string server, string db)
         {
             this.connectionString = $"Server={server}; Database={db}; User ID=root;";
         }
@@ -26,24 +26,29 @@ namespace Entidades
         {
             List<Empleado> listaEmpleados = new List<Empleado>();
 
-            using (var conexion = ObtenerConexion())//creo conexión y la abro
+            using (var conexion = ObtenerConexion())
             {
-                //CRUD: Create, Read, Update, Delete
-                conexion.Open();
-                string query = "SELECT * FROM empleados";
-                MySqlCommand cmd = new MySqlCommand(query, conexion);//comando que quiero ejecutar y la conexión activa
-                MySqlDataReader reader = cmd.ExecuteReader();//representa un puntero en memoria, y es de sólo avance y solo lectura. Va leyendo y avanzando la lista o coleccion de la consulta.
-                while (reader.Read())//tiene que repetirse por cada lectura que tiene del objeto, por eso lo recorro
+                try
                 {
-                    var empleado = new Empleado(
-                        reader.GetInt32("id"),
-                        reader.GetString("nombre"),
-                        reader.GetString("puesto"),
-                        reader.GetFloat("salario")
-                        );
+                    conexion.Open();
+                    string query = "SELECT * FROM empleados";
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);//comando que quiero ejecutar y la conexión activa
+                    MySqlDataReader reader = cmd.ExecuteReader();//representa un puntero en memoria, y es de sólo avance y solo lectura. Va leyendo y avanzando la lista o coleccion de la consulta.
+                    while (reader.Read())
+                    {
+                        var empleado = new Empleado(
+                            reader.GetInt32("id"),
+                            reader.GetString("nombre"),
+                            reader.GetString("puesto"),
+                            reader.GetFloat("salario")
+                            );
 
-                    listaEmpleados.Add(empleado);
-
+                        listaEmpleados.Add(empleado);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
             }
 

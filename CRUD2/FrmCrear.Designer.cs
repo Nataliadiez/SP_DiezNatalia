@@ -32,11 +32,11 @@
             txt_Puesto = new TextBox();
             txt_Salario = new TextBox();
             btn_CrearUsuario = new Button();
-            btn_Cancelar = new Button();
             SuspendLayout();
             // 
             // txt_Nombre
             // 
+            txt_Nombre.BorderStyle = BorderStyle.FixedSingle;
             txt_Nombre.Location = new Point(45, 33);
             txt_Nombre.Name = "txt_Nombre";
             txt_Nombre.PlaceholderText = "Nombre";
@@ -61,28 +61,23 @@
             // 
             // btn_CrearUsuario
             // 
+            btn_CrearUsuario.BackColor = Color.PaleVioletRed;
+            btn_CrearUsuario.FlatStyle = FlatStyle.Flat;
+            btn_CrearUsuario.ForeColor = Color.WhiteSmoke;
             btn_CrearUsuario.Location = new Point(45, 168);
             btn_CrearUsuario.Name = "btn_CrearUsuario";
-            btn_CrearUsuario.Size = new Size(71, 23);
+            btn_CrearUsuario.Size = new Size(169, 23);
             btn_CrearUsuario.TabIndex = 3;
             btn_CrearUsuario.Text = "Aceptar";
-            btn_CrearUsuario.UseVisualStyleBackColor = true;
-            // 
-            // btn_Cancelar
-            // 
-            btn_Cancelar.Location = new Point(143, 168);
-            btn_Cancelar.Name = "btn_Cancelar";
-            btn_Cancelar.Size = new Size(71, 23);
-            btn_Cancelar.TabIndex = 4;
-            btn_Cancelar.Text = "Cancelar";
-            btn_Cancelar.UseVisualStyleBackColor = true;
+            btn_CrearUsuario.UseVisualStyleBackColor = false;
+            btn_CrearUsuario.Click += btn_CrearUsuario_Click;
             // 
             // FrmCrear
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightPink;
             ClientSize = new Size(252, 258);
-            Controls.Add(btn_Cancelar);
             Controls.Add(btn_CrearUsuario);
             Controls.Add(txt_Salario);
             Controls.Add(txt_Puesto);
@@ -100,6 +95,5 @@
         private TextBox txt_Puesto;
         private TextBox txt_Salario;
         private Button btn_CrearUsuario;
-        private Button btn_Cancelar;
     }
 }

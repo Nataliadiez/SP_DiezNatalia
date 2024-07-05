@@ -36,24 +36,30 @@
             // 
             // btn_Modificar
             // 
+            btn_Modificar.BackColor = Color.PaleVioletRed;
+            btn_Modificar.FlatStyle = FlatStyle.Flat;
             btn_Modificar.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Modificar.ForeColor = Color.WhiteSmoke;
             btn_Modificar.Location = new Point(77, 298);
             btn_Modificar.Name = "btn_Modificar";
             btn_Modificar.Size = new Size(114, 41);
             btn_Modificar.TabIndex = 1;
             btn_Modificar.Text = "Modificar";
-            btn_Modificar.UseVisualStyleBackColor = true;
+            btn_Modificar.UseVisualStyleBackColor = false;
             btn_Modificar.Click += btn_Modificar_Click;
             // 
             // btn_Eliminar
             // 
+            btn_Eliminar.BackColor = Color.PaleVioletRed;
+            btn_Eliminar.FlatStyle = FlatStyle.Flat;
             btn_Eliminar.Font = new Font("Tahoma", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Eliminar.ForeColor = Color.WhiteSmoke;
             btn_Eliminar.Location = new Point(305, 298);
             btn_Eliminar.Name = "btn_Eliminar";
             btn_Eliminar.Size = new Size(114, 41);
             btn_Eliminar.TabIndex = 2;
             btn_Eliminar.Text = "Eliminar";
-            btn_Eliminar.UseVisualStyleBackColor = true;
+            btn_Eliminar.UseVisualStyleBackColor = false;
             btn_Eliminar.Click += btn_Eliminar_Click;
             // 
             // dg_MostrarElementos
@@ -64,17 +70,18 @@
             dg_MostrarElementos.RowTemplate.Height = 25;
             dg_MostrarElementos.Size = new Size(454, 245);
             dg_MostrarElementos.TabIndex = 3;
-            dg_MostrarElementos.CellContentClick += dataGridView1_CellContentClick;
             dg_MostrarElementos.SelectionChanged += dg_MostrarElementos_SelectionChanged;
             // 
             // FrmMostrar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightPink;
             ClientSize = new Size(529, 405);
             Controls.Add(dg_MostrarElementos);
             Controls.Add(btn_Eliminar);
             Controls.Add(btn_Modificar);
+            ForeColor = Color.Black;
             Name = "FrmMostrar";
             Text = "Menú mostrar";
             ((System.ComponentModel.ISupportInitialize)dg_MostrarElementos).EndInit();
